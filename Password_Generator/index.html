@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #121212;
+        }
+        .container {
+            text-align: center;
+            background-color: rgb(20, 4, 61);
+            padding: 30px;
+            letter-spacing: 2px; 
+            color: white;
+            border: 3px solid white;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .container h1{
+            font-size: 38px;
+            margin-bottom: 20px;
+            letter-spacing: 4px;
+    background: linear-gradient(15deg,#174378, #87a2ad,#97d2ed, #668bb1  );
+    color: #fff;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: background-clip 0.5s;
+        }
+
+        .options {
+            margin-bottom: 20px;
+        }
+        .options label {
+            margin-right: 10px;
+        }
+        .password-output {
+            margin: 20px 0;
+            font-size: 18px;
+            padding: 10px;
+            width: 50vw;
+            border: 1px solid #ccc;
+            background-color: #080808;
+            border-radius: 5px;
+        }
+        .btn {
+            background-color: #e62354;
+            color:white;
+            padding: 10px 20px;
+            border: none;
+            font-weight: 600;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn:active {
+            background-color: #cf5b78;
+        }
+        img{
+            width: 20px;
+            height: 80%;
+            border-radius: 5px;
+            background-color: transparent;
+            cursor: pointer;
+        } 
+        .output-container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container animate__animated  animate__zoomIn">
+    <h1>Generate Random Password</h1>
+    <div class="options">
+        <div class="output-container">
+        <div class="password-output" id="password-output">Your generated password will appear here
+        </div>
+        <img src="copy-icon-4803.png" id="copy-btn" alt="">
+        </div>
+        <label for="length">Password Length:</label>
+        <input type="number" id="length" min="4" max="20" value="12">
+        <br><br>
+        <label>
+            <input type="checkbox" id="lowercase" checked> Lowercase
+        </label>
+        <label>
+            <input type="checkbox" id="uppercase"> Uppercase
+        </label>
+        <label>
+            <input type="checkbox" id="numbers"> Numbers
+        </label>
+        <label>
+            <input type="checkbox" id="symbols"> Symbols
+        </label>
+    </div>
+    
+
+    <button class="btn" id="generate-btn">Generate Password</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
