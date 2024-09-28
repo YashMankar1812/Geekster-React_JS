@@ -1,0 +1,139 @@
+/* EducationPlanner.module.css */
+
+.container {
+    background-color: #101e48; /* blue-950 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .App {
+    height: 40vw;
+    width: auto;
+    padding: 30px; /* p-4 */
+    background-color:rgb(193, 217, 238);
+    text-align: center;
+    color: white;
+    border: 2px solid black;
+    border-radius: 0.5rem; /* rounded-lg */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* shadow-lg */
+  }
+  
+  .App h1 {
+    font-size: 1.5rem; /* text-2xl */
+    margin-bottom: 16px; /* mb-4 */
+    font-weight: 500; /* font-semibold */
+    background-color:#8e3939;
+  }
+  
+  .inputContainer {
+    margin-bottom: 16px; /* mb-4 */
+  }
+  
+  .subjectInput,
+  .hoursInput {
+    border: 2px solid black; /* border */
+    border-radius: 0.25rem; /* rounded */
+    padding: 8px 10px; /* py-1 px-2 */
+    margin-right: 8px; /* mr-2 */
+  }
+  
+  .hoursInput {
+    width: 8rem; /* w-16 */
+  }
+  
+  .addButton {
+    background-color:#22c55e; /* bg-blue-500 */
+    color: white;
+    padding: 8px 10px; /* py-1 px-2 */
+    border-radius: 0.25rem; /* rounded */
+    cursor: pointer;
+  }
+  
+  .subjectItem {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px; /* mb-2 */
+    justify-content: space-between;
+    padding: 10px 10px;
+    border: 2px solid black;
+    background-color: rgb(245, 206, 156);
+  }
+  
+  .incrementButton {
+    background-color: #13572c; /* bg-green-500 */
+    color: white;
+    padding: 10px 10px; 
+    font-size: 20px;
+    border-radius: 0.25rem;
+    cursor: pointer;
+  }
+  
+  .decrementButton {
+    background-color: #8e3939; /* bg-red-500 */
+    color: white;
+    padding: 10px 10px; /* py-1 px-2 */
+    font-size: 20px;
+    border-radius: 0.25rem; /* rounded */
+    cursor: pointer;
+  }
+  
+  .deleteButton {
+    color:black; /* text-red-500 */
+    background: none;
+    border: none;
+ font-size: 30px;
+    cursor: pointer;
+    transition: color 0.2s; /* transition for smooth color change */
+  }
+  
+  .deleteButton:hover {
+    color: #dc2626; /* hover:text-red-700 */
+  }
+  div{
+  color: black;
+  font-weight: 600;
+  }
+
+  /* Add responsivefor mobile view  */
+  @media screen and (max-width: 600px) {
+    .App {
+      height: 70vh;
+      margin: 20px;
+    }
+    .App h1{
+      font-size: 1.2rem;
+    }
+    
+    .subjectInput,
+    .hoursInput {
+      width: 100%;
+   margin: 5px 0 ;
+    }
+    
+    .addButton{
+      width: 100%;
+      padding: 10px;
+      border-radius: none;
+    }
+    .incrementButton,
+    .decrementButton {
+      width: 30%;
+      padding: 5px;
+      font-size: 10px;
+      border-radius: 20px;
+    }
+    .deleteButton{
+      font-size: 20px;
+    }
+    
+    .subjectItem {
+      align-items: center;
+      padding: 10px;
+    }
+
+  }
+
+/* Add animation for spinning logo  */
