@@ -31,7 +31,7 @@ function App() {
 
   // Toggle task completion
   const toggleTask = (index) => {
-    const newTasks = tasks.map((t, i) => 
+    const newTasks = tasks.map((t, i) =>
       i === index ? { ...t, completed: !t.completed } : t
     );
     setTasks(newTasks);
@@ -43,33 +43,45 @@ function App() {
     setTasks(newTasks);
   };
 
-  // Clear completed tasks
   const clearCompleted = () => {
-    const newTasks = tasks.filter((t) => !t.completed);
-    setTasks(newTasks);
+    const newTasks = tasks.filter((t) => !t.completed); // Keep only uncompleted tasks
+    
+    // If there are no uncompleted tasks left, clear the entire list
+    if (newTasks.length === 0) {
+      showAlert(true, 'All tasks cleared!', 'success');
+    } else if (newTasks.length === tasks.length) {
+      showAlert(true, 'No completed tasks to clear!', 'danger');
+    } else {
+      showAlert(true, 'Completed tasks cleared!', 'success');
+    }
+  
+    setTasks(newTasks); // Update tasks with the new filtered list
   };
-
+  
+  
   // Show alert
   const showAlert = (show = false, message = '', type = '') => {
     setAlert({ show, message, type });
     if (show) {
       setTimeout(() => {
         setAlert({ show: false, message: '', type: '' });
-      }, 1000); // Hide alert after 1 second
+      }, 3000); // Hide alert after 1 second
     }
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 p-8">
-      <div className="max-w-md mx-auto bg-white rounded shadow p-6">
-        <h1 className="text-2xl font-bold text-center mb-4">LocalTasker</h1>
+    <div className="min-h-screen bg-gradient-to-r from-gray-900 via-blue-900 to-gray-900 p-8">
+      <div className=" rounded  p-6">
+        <h1 className="animate__animated animate__backInDown text-3xl font-extrabold tracking-wider text-center mb-6 text-white bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 p-4 rounded-lg shadow-md">
+          Local Tasker
+        </h1>
 
         {/* Alert Message */}
         {alert.show && (
           <div
             className={`p-2 mb-4 text-center text-white ${
               alert.type === 'success' ? 'bg-green-500' : 'bg-red-500'
-            } rounded flex justify-between`}
+            } rounded flex justify-between  w-50 float-right`}
           >
             {alert.message}
             <button
@@ -81,50 +93,65 @@ function App() {
           </div>
         )}
 
-        <div className="flex mb-4">
+        <div className="flex mb-4 justify-center">
           <input
             type="text"
-            className="border p-2 w-full"
+            className="animate__animated animate__fadeInDown animate__delay-2s border align-center p-3 w-80 rounded-lg bg-gray-100 text-pink-700 font-bold focus:ring-2 focus:ring-blue-500 focus:outline-none"
             value={task}
             onChange={(e) => setTask(e.target.value)}
             placeholder="Enter your task..."
           />
           <button
-            className="bg-blue-500 text-white p-2 ml-2 rounded"
+            className="animate__animated animate__fadeInDown animate__delay-2s bg-gradient-to-r from-green-800 via-green-900 to-green-500
+            text-white p-3 ml-2 rounded-lg shadow-md transition-all duration-300"
             onClick={addTask}
           >
-            Add Task
+            ADD
           </button>
         </div>
-        <ul className="list-disc pl-6">
-          {tasks.map((t, index) => (
-            <li key={index} className="flex justify-between items-center mb-2">
-              <span
-                className={`cursor-pointer ${t.completed ? 'line-through text-gray-500' : ''}`}
-                onClick={() => toggleTask(index)}
+
+        {/* Conditionally render the task list only if there are tasks */}
+        {tasks.length > 0 && (
+          <ul className="list-disc pl-6 space-y-3">
+            {tasks.map((t, index) => (
+              <li
+                key={index}
+                className="flex justify-between items-center bg-gray-50 p-3 rounded-lg shadow-md hover:bg-gray-100"
               >
-                {t.text}
-              </span>
-              <button
-                className="text-red-500 hover:text-red-700"
-                onClick={() => deleteTask(index)}
-              >
-                Delete
-              </button>
-            </li>
-          ))}
-        </ul>
-        <div className="mt-4">
-          <button
-            className="bg-red-500 text-white p-2 rounded w-full"
-            onClick={clearCompleted}
-          >
-            Clear Completed
-          </button>
-        </div>
+                <span
+                  className={`cursor-pointer ${
+                    t.completed ? 'line-through text-gray-500 font-bold' : ''
+                  }`}
+                  onClick={() => toggleTask(index)}
+                >
+                  {t.text}
+                </span>
+                <button
+                  className="text-red-500 font-bold bg-transparent hover:bg-red-500 hover:text-white border border-red-500 hover:border-transparent p-2 rounded-lg transition-all duration-300 transform hover:scale-105"
+                  onClick={() => deleteTask(index)}
+                >
+                  Delete
+                </button>
+              </li>
+            ))}
+          </ul>
+        )}
+
+        {/* Clear Completed Button */}
+        {tasks.length > 0 && (
+          <div className="mt-6">
+            {/* <button
+              className="bg-purple-400 hover:bg-red-600 text-white p-3 w-full  rounded-lg shadow-md transition-all duration-300"
+              onClick={clearCompleted}
+            >
+              Clear Completed
+            </button> */}
+          </div>
+        )}
       </div>
     </div>
   );
 }
 
 export default App;
+
