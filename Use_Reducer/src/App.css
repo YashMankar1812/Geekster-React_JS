@@ -1,0 +1,224 @@
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #050535;
+  margin: 0;
+  padding: 20px; 
+  color: #333;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  margin: 0 auto;
+  padding: 20px;
+  max-width: 1200px;
+  gap: 20px;
+}
+
+h2 {
+  font-size: 1.8rem;
+  color: #2c3e50;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* Emp Section */
+.emp-section {
+  background-color: #ffffff;
+  padding: 20px 20px 20px ;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 40%;
+}
+
+
+.emp-component .card {
+  background-color: #051e24;
+  padding: 15px;
+}
+.emp-component .card-title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #34495e;
+}
+
+.emp-component .card-description {
+  font-size: 1rem;
+  color: #7f8c8d;
+}
+/* Button Styles */
+button {
+  background: linear-gradient(135deg, #3498db, #2ecc71);
+  color: #fff;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.4s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #2ecc71, #3498db);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+button:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(52, 152, 219, 0.5);
+}
+
+/* Team Section */
+.team-section {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 40%;
+}
+
+
+.team-component {
+  display: flex;
+  gap: 15px;
+}
+
+.team-component .card {
+  /* background-color: #ecf0f1; */
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.team-component .card-title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #34495e;
+}
+
+.team-component .card-description {
+  font-size: 1rem;
+  color: #7f8c8d;
+}
+
+/* Remove Button Styles */
+button.remove-btn {
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  color: #fff;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.4s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+button.remove-btn:hover {
+  background: linear-gradient(135deg, #c0392b, #e74c3c);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+button.remove-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+button.remove-btn:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(231, 76, 60, 0.5);
+}
+
+
+
+
+/* Employee Container */
+.emp {
+  width: 100%;
+  margin: 20px auto;
+  padding: 10px;
+  max-width: 800px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.emp h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+/* Employee Cards Container */
+.emp-cont {
+  max-height: 400px; /* Set a fixed height */
+  overflow-y: auto; /* Enable vertical scrolling */
+  padding-right: 10px;
+}
+
+/* Scrollbar Styling (Optional) */
+.emp-cont::-webkit-scrollbar {
+  width: 8px;
+}
+
+.emp-cont::-webkit-scrollbar-thumb {
+  background-color: #3498db;
+  border-radius: 4px;
+}
+
+.emp-cont::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
+
+/* Employee Card */
+.emp-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* padding: 10px; */
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.emp-card .wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.emp-card p {
+  margin: 0;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Button Styles */
+button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
